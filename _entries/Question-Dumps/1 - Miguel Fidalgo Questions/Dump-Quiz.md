@@ -5,42 +5,37 @@ parent-id: Questions
 title: 1 - Miguel Fidalgo Questions
 number: 3100
 ---
-
-### Question 1/71
-
-
-
-
-
-* A company needs to deploy an Amazon EC2 instance and attach a storage mount for the operating system and application files. Which AWS service will meet these requirements?
-
-A. Amazon Elastic File System (Amazon EFS)
-
-B. Amazon Elastic Block Store (Amazon EBS)
-
-C. AWS Backup
-
-D. Amazon S3
-
-**Correct Answer: D**
-
 ### Question 1/299
 
 * "A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. 
 Which action should the SysOps administrator take to meet this requirement?"	
 
-**Correct Answer: Update the Auto Scaling group to launch new instances in a second Availability Zone in the same AWS Region.**
+**R: Update the Auto Scaling group to launch new instances in a second Availability Zone in the same AWS Region.**
 
+### Question 2/299
 
-"A company hosts a website on multiple Amazon EC2 instances that run in an Auto Scaling group. Users are reporting slow responses during peak times between
-6 PM and 11 PM every weekend. A SysOps administrator must implement a solution to improve performance during these peak times.
-What is the MOST operationally efficient solution that meets these requirements?"	Configure a scheduled scaling action with a recurrence option to change the desired capacity before and after peak times
+* "A company hosts a website on multiple Amazon EC2 instances that run in an Auto Scaling group. Users are reporting slow responses during peak times between 6 PM and 11 PM every weekend. A SysOps administrator must implement a solution to improve performance during these peak times.
+What is the MOST operationally efficient solution that meets these requirements?"
 
-"A company is running a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The company configured an Amazon CloudFront distribution and set the ALB as the origin. The company created an Amazon Route 53 CNAME record to send all traffic through the CloudFront distribution. As an unintended side effect, mobile users are now being served the desktop version of the website.
-Which action should a SysOps administrator take to resolve this issue?"	Configure the CloudFront distribution behavior to forward the User-Agent header.
+**R: Configure a scheduled scaling action with a recurrence option to change the desired capacity before and after peak times**
 
-"A SysOps administrator has enabled AWS CloudTrail in an AWS account. If CloudTrail is disabled, it must be re-enabled immediately.
-What should the SysOps administrator do to meet these requirements WITHOUT writing custom code?"	Create an AWS Config rule that is invoked when CloudTrail configuration changes. Apply the AWS-ConfigureCloudTrailLogging automatic remediation action.
+### Question 3/299
+
+* "A company is running a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The company configured an Amazon CloudFront distribution and set the ALB as the origin. The company created an Amazon Route 53 CNAME record to send all traffic through the CloudFront distribution. As an unintended side effect, mobile users are now being served the desktop version of the website.
+Which action should a SysOps administrator take to resolve this issue?"
+
+**R: Configure the CloudFront distribution behavior to forward the User-Agent header.**
+
+### Question 4/299
+
+* "A SysOps administrator has enabled AWS CloudTrail in an AWS account. If CloudTrail is disabled, it must be re-enabled immediately.
+What should the SysOps administrator do to meet these requirements WITHOUT writing custom code?"	
+
+**R:** 
+**- Create an AWS Config rule that is invoked when CloudTrail configuration changes.**
+**- Apply the AWS-ConfigureCloudTrailLogging automatic remediation action.**
+
+### Question 5/299
 
 "A company hosts its website on Amazon EC2 instances behind an Application Load Balancer. The company manages its DNS with Amazon Route 53, and wants to point its domain's zone apex to the website.
 Which type of record should be used to meet these requirements?"	An alias record for the domain's zone apex
