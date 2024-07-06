@@ -1,36 +1,36 @@
 ---
-sectionid: Dump102022023
-sectionclass: h2
+sectionid: ExamTopicsDump
+sectionclass: h3
 parent-id: Questions
-title: Dump 1 - 02-02-2023
-number: 3100
+title: 2 - ExamTopics
+number: 2200
 ---
 
-### Question 1/71
+### Question 1
 
-* A company needs to deploy an Amazon EC2 instance and attach a storage mount for the operating system and application files. Which AWS service will meet these requirements?
+*  A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto
+Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available.
+Which action should the SysOps administrator take to meet this requirement?
 
-A. Amazon Elastic File System (Amazon EFS)
+    A. Increase the maximum number of instances in the Auto Scaling group to meet the capacity that is required at peak usage.
+    B. Increase the minimum number of instances in the Auto Scaling group to meet the capacity that is required at peak usage.
+    C. Update the Auto Scaling group to launch new instances in a second Availability Zone in the same AWS Region.
+    D. Update the Auto Scaling group to launch new instances in an Availability Zone in a second AWS Region.
 
-B. Amazon Elastic Block Store (Amazon EBS)
+**Correct Answer: C**
 
-C. AWS Backup
+### Question 2
 
-D. Amazon S3
+*  A company hosts a website on multiple Amazon EC2 instances that run in an Auto Scaling group. Users are reporting slow responses during peak times between
+6 PM and 11 PM every weekend. A SysOps administrator must implement a solution to improve performance during these peak times.
+What is the MOST operationally efficient solution that meets these requirements?
 
-**Correct Answer: D**
+    A. Create a scheduled Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function to increase the desired capacity before peak times.
+    B. Configure a scheduled scaling action with a recurrence option to change the desired capacity before and after peak times.
+    C. Create a target tracking scaling policy to add more instances when memory utilization is above 70%.
+    D. Configure the cooldown period for the Auto Scaling group to modify desired capacity before and after peak times.
 
-### Question 2/71
 
-* Which AWS service provides alerts when an AWS event may impact a company's AWS resources?
-
-A. AWS Infrastructure Event Management
-
-B. AWS Trusted Advisor
-
-C. AWS Personal Health Dashboard
-
-D. AWS Service Health Dashboard
 
 **Correct Answer: C**
 
