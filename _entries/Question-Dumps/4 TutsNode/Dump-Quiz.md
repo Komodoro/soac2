@@ -1626,4 +1626,253 @@ Correct Answer
 
 Restore links have an expiration date, you have to request another one
 
-##
+## Networking VPC Quiz
+
+Question 1
+
+What does this CIDR 10.0.4.0/28 correspond to?
+1
+
+10.0.4.0 to 10.0.4.15
+2
+
+10.0.4.0 to 10.0.32.0
+3
+
+10.0.4.0 to 10.0.4.28
+4
+
+10.0.0.0 to 10.0.16.0
+Correct Answer
+1
+
+10.0.4.0 to 10.0.4.15
+Explanation
+
+/28 means 16 IPs (=2^(32-28) = 2^4), means only the last digit can change.
+Question 2
+
+You have a corporate network of size 10.0.0.0/8 and a satellite office of size 192.168.0.0/16. Which CIDR is acceptable for your AWS VPC if you plan on connecting your networks later on?
+1
+
+172.16.0.0/12
+2
+
+172.16.0.0/16
+3
+
+10.0.16.0/16
+4
+
+192.168.4.0/18
+Correct Answer
+2
+
+172.16.0.0/16
+Explanation
+
+CIDR not should overlap, and the max CIDR size in AWS is /16
+Question 3
+
+You plan on creating a subnet and want it to have at least capacity for 28 EC2 instances. What's the minimum size you need to have for your subnet?
+1
+
+/28
+2
+
+/27
+3
+
+/26
+4
+
+/25
+Correct Answer
+Question 4
+
+You have attached an Internet Gateway to your VPC, but your EC2 instances still don't have access to the Internet. What is NOT a possible issue?
+1
+
+Route Tables are missing entries
+2
+
+The EC2 instance doesn't have a public IP
+3
+
+The Security Group doesn't allow network in
+4
+
+The NACL doesn't allow network traffic out
+Correct Answer
+3
+
+The Security Group doesn't allow network in
+Explanation
+
+Security groups are stateful and if traffic can go out, then it can go back in
+Question 5
+
+You would like to provide Internet access to your EC2 instances in private subnets with IPv4 while making sure this solution requires the least amount of administration and scales seamlessly. What should you use?
+1
+
+NAT Instance with Source/Destination Check flag off
+2
+
+NAT Gateway
+3
+
+Egress Only Internet Gateway
+Correct Answer
+2
+
+NAT Gateway
+Question 6
+
+VPC Peering has been established between VPC A and VPC B, and the route tables have been updated for VPC A. But, your EC2 instances cannot communicate. What is the likely issue?
+1
+
+Check the NACL
+2
+
+Check the EC2 instance Security Groups
+3
+
+Check the Route Tables in VPC B
+4
+
+Check if DNS Resolution is enabled
+Correct Answer
+3
+
+Check the Route Tables in VPC B
+Question 7
+
+You have established a Direct Connect connection between your Corporate Data Center and VPC A in your AWS Account. You need to access VPC B in another AWS Region from your Corporate Data Center as well. What should you do?
+1
+
+Enable VPC Peering
+2
+
+Use a Customer Gateway
+3
+
+Set up a NAT Gateway
+4
+
+Use a Direct Connect Gateway
+Correct Answer
+4
+
+Use a Direct Connect Gateway
+Question 8
+
+When using VPC Endpoints, what are the only two AWS services that have a Gateway Endpoint available?
+1
+
+Amazon S3 & DynamoDB
+2
+
+Amazon S3 & Amazon SQS
+3
+
+Amazon SQS & DynamoDB
+Correct Answer
+1
+
+Amazon S3 & DynamoDB
+Explanation
+
+These two services have a VPC Gateway Endpoint (remember it), all the other ones have an Interface endpoint (powered by Private Link - means a private IP)
+Question 9
+
+AWS reserves 5 IP addresses each time you create a new subnet in a VPC. When you create a subnet with CIDR 10.0.0.0/24, the following IP addresses are reserved, EXCEPT:
+1
+
+10.0.0.1
+2
+
+10.0.0.2
+3
+
+10.0.0.3
+4
+
+10.0.0.4
+Correct Answer
+4
+
+10.0.0.4
+Question 10
+
+You have created a new VPC with 4 subnets in it. You begin to launch a set of EC2 instances inside these subnets but you noticed that these EC2 instances don't get assigned public hostnames and DNS resolution isn't working. What should you do to resolve this issue?
+1
+
+Enable DNS Resolution and DNS Hostnames in your VPC
+2
+
+Check route tables attached to your subnets
+3
+
+Make sure that your Internet Gateway is working properly
+Correct Answer
+1
+
+Enable DNS Resolution and DNS Hostnames in your VPC
+Question 11
+
+You have 3 VPCs A, B, and C. You want to establish a VPC Peering connection between all the 3 VPCs. what should you do?
+1
+
+VPC Peering supports Transitive Peering, so you need to establish 2 VPC Peering connections (A-B, B-C)
+2
+
+Establish 3 VPC Peering connections (A-B, A-C, B-C)
+Correct Answer
+2
+
+Establish 3 VPC Peering connections (A-B, A-C, B-C)
+Question 12
+
+How can you capture information about IP traffic inside your VPCs?
+1
+
+Enable VPC Traffic Mirroring
+2
+
+Enable CloudWatch Traffic Logs
+3
+
+Enable VPC Flow Logs
+Correct Answer
+3
+
+Enable VPC Flow Logs
+Question 13
+
+If you want a 500 Mbps Direct Connect connection from your corporate data center to AWS. You would create a ............... connection.
+1
+
+Hosted
+2
+
+Dedicated
+Correct Answer
+1
+
+Hosted
+Question 14
+
+You have an internal web application hosted in a private subnet in your VPC that you want to be used by other customers. You don't want to expose the application to the Internet or opens your whole VPC to other customers. What should you do?
+1
+
+Use NAT Gateway
+2
+
+Use VPC Endpoint Services
+3
+
+Use VPC Peering
+Correct Answer
+2
+
+Use VPC Endpoint Services
