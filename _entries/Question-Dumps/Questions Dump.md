@@ -1,6 +1,6 @@
 ---
 sectionid: Questions
-sectionclass: h2
+sectionclass: h1
 is-parent: yes
 title: Module 1 - Questions
 number: 2000

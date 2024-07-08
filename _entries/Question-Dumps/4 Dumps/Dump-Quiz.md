@@ -1,7 +1,7 @@
 ---
 sectionid: 4Dumps
-sectionclass: h3
+sectionclass: h2
 parent-id: Questions
-title: 4 Dumps
+title: Dumps
 number: 2400
 ---

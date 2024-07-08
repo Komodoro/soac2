@@ -1,97 +1,144 @@
 ---
 sectionid: MiguelFidalgoDump
-sectionclass: h3
+sectionclass: h2
 parent-id: Questions
-title: 1 - Miguel Fidalgo Questions
+title: Miguel Fidalgo Questions
 number: 2100
 ---
-### Question 1/299
+### Question 1
 
 * "A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. 
 Which action should the SysOps administrator take to meet this requirement?"	
 
 **R: Update the Auto Scaling group to launch new instances in a second Availability Zone in the same AWS Region.**
 
-### Question 2/299
+### Question 2
 
 * "A company hosts a website on multiple Amazon EC2 instances that run in an Auto Scaling group. Users are reporting slow responses during peak times between 6 PM and 11 PM every weekend. A SysOps administrator must implement a solution to improve performance during these peak times.
 What is the MOST operationally efficient solution that meets these requirements?"
 
 **R: Configure a scheduled scaling action with a recurrence option to change the desired capacity before and after peak times**
 
-### Question 3/299
+### Question 3
 
 * "A company is running a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The company configured an Amazon CloudFront distribution and set the ALB as the origin. The company created an Amazon Route 53 CNAME record to send all traffic through the CloudFront distribution. As an unintended side effect, mobile users are now being served the desktop version of the website.
 Which action should a SysOps administrator take to resolve this issue?"
 
 **R: Configure the CloudFront distribution behavior to forward the User-Agent header.**
 
-### Question 4/299
+### Question 4
 
 * "A SysOps administrator has enabled AWS CloudTrail in an AWS account. If CloudTrail is disabled, it must be re-enabled immediately.
 What should the SysOps administrator do to meet these requirements WITHOUT writing custom code?"	
 
+**R: Create an AWS Config rule that is invoked when CloudTrail configuration changes. Apply the AWS-ConfigureCloudTrailLogging automatic remediation action.**
+
+### Question 5
+
+* "A company hosts its website on Amazon EC2 instances behind an Application Load Balancer. The company manages its DNS with Amazon Route 53, and wants to point its domain's zone apex to the website.
+Which type of record should be used to meet these requirements?"
+
+**R: An alias record for the domain's zone apex**
+
+### Question 6
+
+* "A company must ensure that any objects uploaded to an S3 bucket are encrypted.
+Which of the following actions will meet this requirement? (Choose two.)"	
+
 **R:** 
-**- Create an AWS Config rule that is invoked when CloudTrail configuration changes.**
-**- Apply the AWS-ConfigureCloudTrailLogging automatic remediation action.**
+**1. Implement Amazon S3 default encryption to make sure that any object being uploaded is encrypted before it is stored.**
+**2. Implement S3 bucket policies to deny unencrypted objects from being uploaded to the buckets**
 
-### Question 5/299
+### Question 7
 
-"A company hosts its website on Amazon EC2 instances behind an Application Load Balancer. The company manages its DNS with Amazon Route 53, and wants to point its domain's zone apex to the website.
-Which type of record should be used to meet these requirements?"	An alias record for the domain's zone apex
-
-"A company must ensure that any objects uploaded to an S3 bucket are encrypted.
-Which of the following actions will meet this requirement? (Choose two.)"	"Implement Amazon S3 default encryption to make sure that any object being uploaded is encrypted before it is stored.      
-        Implement S3 bucket policies to deny unencrypted objects from being uploaded to the buckets"
-
-"A company has a stateful web application that is hosted on Amazon EC2 instances in an Auto Scaling group. The instances run behind an Application Load
+* "A company has a stateful web application that is hosted on Amazon EC2 instances in an Auto Scaling group. The instances run behind an Application Load
 Balancer (ALB) that has a single target group. The ALB is configured as the origin in an Amazon CloudFront distribution. Users are reporting random logouts from the web application.
-Which combination of actions should a SysOps administrator take to resolve this problem? (Choose two.)"	"Configure cookie forwarding in the CloudFront distribution cache behavior. 
-Enable sticky sessions on the ALB target group."
+Which combination of actions should a SysOps administrator take to resolve this problem? (Choose two.)"	
 
-"A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous ""too many connections"" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible.
-What should a SysOps administrator do to resolve these errors?"	Use Amazon RDS Proxy to create a proxy. Update the connection string in the Lambda function.
+**R:**
+**1. Configure cookie forwarding in the CloudFront distribution cache behavior.**
+**2. Enable sticky sessions on the ALB target group.**
 
-"A SysOps administrator is deploying an application on 10 Amazon EC2 instances. The application must be highly available. The instances must be placed on distinct underlying hardware.
-What should the SysOps administrator do to meet these requirements?"	Launch the instances into a spread placement group in a single AWS Region.
+### Question 8
 
-"A SysOps administrator is troubleshooting an AWS CloudFormation template whereby multiple Amazon EC2 instances are being created. The template is working in us-east-1, but it is failing in us-west-2 with the error code:
+* "A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous "*too many connections*" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible.
+What should a SysOps administrator do to resolve these errors?"	
+
+**R: Use Amazon RDS Proxy to create a proxy. Update the connection string in the Lambda function.**
+
+### Question 9
+
+* "A SysOps administrator is deploying an application on 10 Amazon EC2 instances. The application must be highly available. The instances must be placed on distinct underlying hardware.
+What should the SysOps administrator do to meet these requirements?"	
+
+**R: Launch the instances into a spread placement group in a single AWS Region.**
+
+### Question 10
+
+* "A SysOps administrator is troubleshooting an AWS CloudFormation template whereby multiple Amazon EC2 instances are being created. The template is working in us-east-1, but it is failing in us-west-2 with the error code:
 AMI [ami-12345678] does not exist
-How should the Administrator ensure that the AWS CloudFormation template is working in every region?"	Modify the AWS CloudFormation template by including the AMI IDs in the ג€Mappingsג€ section. Refer to the proper mapping within the template for the proper AMI ID
+How should the Administrator ensure that the AWS CloudFormation template is working in every region?"	
+
+**R: Modify the AWS CloudFormation template by including the AMI IDs in the ג€Mappingsג€ section. Refer to the proper mapping within the template for the proper AMI ID**
+
+### Question 11
 
 "A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency.
-Which solution will meet these requirements?"	Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
+Which solution will meet these requirements?"	
+
+**R: Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.**
+
+### Question 12
 
 "A SysOps administrator has successfully deployed a VPC with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations.
-Which solution will meet this requirement with the LEAST operational overhead?"	Use AWS CloudFormation StackSets from the management account to deploy the template in each of the accounts.
+Which solution will meet this requirement with the LEAST operational overhead?"	
+
+**R: Use AWS CloudFormation StackSets from the management account to deploy the template in each of the accounts.**
+
+### Question 13
 
 "A company is running distributed computing software to manage a fleet of 20 Amazon EC2 instances for calculations. The fleet includes 2 control nodes and 18 task nodes to run the calculations. Control nodes can automatically start the task nodes.
 Currently, all the nodes run on demand. The control nodes must be available 24 hours a day, 7 days a week. The task nodes run for 4 hours each day. A SysOps administrator needs to optimize the cost of this solution.
 Which combination of actions will meet these requirements? (Choose two.)"	"Purchase EC2 Instance Savings Plans for the control nodes
 Use Spot Instances for the task nodes. Use On-Demand Instances if there is no Spot availability."
 
+
+### Question 14
+
 "A company is supposed to receive a data file every hour in an Amazon S3 bucket. An S3 event notification invokes an AWS Lambda function each time a file arrives. The function processes the data for use by an application.
 The application team notices that sometimes the file does not arrive. The application team wants to receive a notification whenever the file does not arrive.
 What is the MOST operationally efficient solution that meets these requirements?"	Create an Amazon CloudWatch alarm to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic to alert the application team when the Invocations metric of the Lambda function is zero for an hour. Configure the alarm to treat missing data as breaching.
+
+### Question 15
 
 "A company recently acquired another corporation and all of that corporation's AWS accounts. A financial analyst needs the cost data from these accounts. A
 SysOps administrator uses Cost Explorer to generate cost and usage reports. The SysOps administrator notices that ""No Tagkey"" represents 20% of the monthly cost.
 What should the SysOps administrator do to tag the ""No Tagkey"" resources?"	Use Tag Editor to find and tag all the untagged resources
 
+### Question 16
+
 "While setting up an AWS managed VPN connection, a SysOps administrator creates a customer gateway resource in AWS. The customer gateway device resides in a data center with a NAT gateway in front of it.
 What address should be used to create the customer gateway resource?"	The public IP address of the NAT device in front of the customer gateway device
 
+### Question 17
+
 "A company has a web application that is experiencing performance problems many times each night. A root cause analysis reveals sudden increases in CPU utilization that last 5 minutes on an Amazon EC2 Linux instance. A SysOps administrator must find the process ID (PID) of the service or process that is consuming more CPU.
 What should the SysOps administrator do to collect the process utilization information with the LEAST amount of effort?"	Configure the Amazon CloudWatch agent procstat plugin to capture CPU process metrics.
+
+### Question 18
 
 "A SysOps administrator configured AWS Backup to capture snapshots from a single Amazon EC2 instance that has one Amazon Elastic Block Store (Amazon
 EBS) volume attached. On the first snapshot, the EBS volume has 10 GiB of data. On the second snapshot, the EBS volume still contains 10 GiB of data, but 4
 GiB have changed. On the third snapshot, 2 GiB of data have been added to the volume, for a total of 12 GiB.
 How much total storage is required to store these snapshots?"	16 GiB
 
+### Question 19
+
 "A team is managing an AWS account that is a member of an organization in AWS Organizations. The organization has consolidated billing features enabled. The account hosts several applications.
 A SysOps administrator has applied tags to resources within the account to reflect the environment. The team needs a report of the breakdown of charges by environment.
 What should the SysOps administrator do to meet this requirement?"	Activate the tag keys for cost allocation on the organization's management account
+
+### Question 20
 
 "A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance. A SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched.
 What should the SysOps administrator do to meet this requirement?"	Add the DependsOn attribute to the EC2 instance resource, and provide the logical name of the RDS resource.
