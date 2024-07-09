@@ -1,8 +1,8 @@
 ---
-sectionid: ExamTopicsDump
+sectionid: dumpsbase
 sectionclass: h2
 parent-id: Questions
-title: ExamTopics
+title: Dumps Base Exam
 number: 2200
 ---
 
