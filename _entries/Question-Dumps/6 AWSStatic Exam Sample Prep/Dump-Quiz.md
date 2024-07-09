@@ -6,7 +6,6 @@ title: AWSStatic Exam Prep Sample Questions
 number: 2600
 ---
 
-
 ### Question 1
 
 *A company hosts a web application on an Amazon EC2 instance. Users report that the web application is occasionally unresponsive. Amazon CloudWatch metrics indicate that the CPU utilization is 100% during these times. A SysOps administrator must implement a solution to monitor for this issue. Which solution will meet this requirement?
