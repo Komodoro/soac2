@@ -8,188 +8,211 @@ number: 2400
 
 ## EC2 Quiz
 
-EC2 Quiz
-Question 1
+### Question 1
 
 How do you change the EC2 instance type in the AWS console?
 
-    By doing a right-click and select "Instance settings" then select "Change instance type"
-    By stopping the EC2 instance, then doing a right-click and select "Instance settings" then select "Change instance type". Finally, start the EC2 instance
+    1. By doing a right-click and select "Instance settings" then select "Change instance type"
+    2. By stopping the EC2 instance, then doing a right-click and select "Instance settings" then select "Change instance type". Finally, start the EC2 instance
 
-Correct Answer
+**Correct Answer**
 2. By stopping the EC2 instance, then doing a right-click and select "Instance settings" then select "Change instance type". Finally, start the EC2 instance
-Question 2
+
+### Question 2
 
 You would like to make sure your EC2 instances have the highest performance while talking to each other as you are performing big data analysis. Which placement group should you choose?
 
-    Cluster
-    Spread
-    Partition
+    1. Cluster
+    2. Spread
+    3. Partition
 
-Correct Answer
+**Correct Answer**
+1. Cluster
 
-    Cluster
-
-Question 3
+### Question 3
 
 You have an EC2 instance where Termination Protection is enabled and Shutdown Behavior is set to Terminate. From within the EC2 instance, you shut down the OS using shutdown. What will happen?
 
-    The EC2 instance will not shut down
-    The EC2 instance will get terminated
-    The EC2 instance will be in a "stopped" state
+    1. The EC2 instance will not shut down
+    2. The EC2 instance will get terminated
+    3. The EC2 instance will be in a "stopped" state
 
-Correct Answer
+**Correct Answer**
 2. The EC2 instance will get terminated
-Question 4
+
+### Question 4
 
 You're trying to launch an EC2 instance and you're getting the following error InstanceLimitExceeded. What can you do to resolve this issue?
 
-    Launch the EC2 instance in a different AZ because it's a vCPU limit on a per-AZ level
-    Launch the EC2 instance in a different AWS Region because it's a vCPU limit on a per-region level
-    Change the AMI used to launch the EC2 instance as AMIs are regional
-    AWS does not have enough on-demand capacity regarding the particular AZ
+    1. Launch the EC2 instance in a different AZ because it's a vCPU limit on a per-AZ level
+    2. Launch the EC2 instance in a different AWS Region because it's a vCPU limit on a per-region level
+    3. Change the AMI used to launch the EC2 instance as AMIs are regional
+    4. AWS does not have enough on-demand capacity regarding the particular AZ
 
-Correct Answer
+**Correct Answer**
 2. Launch the EC2 instance in a different AWS Region because it's a vCPU limit on a per-region level
 
-Explanation
+**Explanation**
+
 When you launch an EC2 instance and you get this error InstanceLimitExceeded, then you have reached your limit of a maximum number of vCPUs per AWS Region. Either launch the EC2 instance in a different AWS Region or contact AWS Support to increase your limit of the AWS Region.
-Question 5
+
+### Question 5
 
 You are getting an error InsufficientInstanceCapacity while trying to launch an EC2 instance. What's the problem?
 
-    You need to request a service limit increase in the AWS Support page for the AZ you're launching the instance into
-    AWS does not have enough on-demand capacity regarding the particular AWS Region
-    AWS does not have enough on-demand capacity regarding the particular AZ
-    You need to request a service limit increase in the AWS Support page for the Region you're launching the instance into
+    1. You need to request a service limit increase in the AWS Support page for the AZ you're launching the instance into
+    2. AWS does not have enough on-demand capacity regarding the particular AWS Region
+    3. AWS does not have enough on-demand capacity regarding the particular AZ
+    4. You need to request a service limit increase in the AWS Support page for the Region you're launching the instance into
 
-Correct Answer
+**Correct Answer**
 3. AWS does not have enough on-demand capacity regarding the particular AZ
 
-Explanation
+**Explanation**
+
 https://aws.amazon.com/premiumsupport/knowledge-center/ec2-insufficient-capacity-errors/
-Question 6
+
+## Question 6
 
 After launching an EC2 instance, its state goes from pending to terminating immediately. What is NOT a reason for this error?
 
-    You've reached your EBS volume limit
-    An EBS snapshot is corrupted
-    The root EBS volume is encrypted and you do not have the permissions to the KMS key for decryption
-    You've reached the instance limit per region assigned to your account
+    1. You've reached your EBS volume limit
+    2. An EBS snapshot is corrupted
+    3. The root EBS volume is encrypted and you do not have the permissions to the KMS key for decryption
+    4. You've reached the instance limit per region assigned to your account
 
-Correct Answer
+**Correct Answer**
+
 4. You've reached the instance limit per region assigned to your account
-Question 7
+
+### Question 7
 
 You plan on running an open-source MongoDB database year-round on EC2. Which instance launch mode should you choose?
 
-    On-Demand Instance
-    Reserved Instance
-    Spot Instance
+    1. On-Demand Instance
+    2. Reserved Instance
+    3. Spot Instance
 
 Correct Answer
 2. Reserved Instance
-Question 8
+
+### Question 8
 
 You're trying to SSH into your EC2 instance and you are facing the following error Connection timed out. Which of the following is NOT a reason for this error?
 
-    Your .pem file on your Linux machine doesn't have 400 permissions
-    EC2 instance doesn't have a public IPv4
-    Route Tables is missing routes
-    Security Group or NACL is not configured correctly
+    1. Your .pem file on your Linux machine doesn't have 400 permissions
+    2. EC2 instance doesn't have a public IPv4
+    3. Route Tables is missing routes
+    4. Security Group or NACL is not configured correctly
 
-Correct Answer
+**Correct Answer**
 
-    Your .pem file on your Linux machine doesn't have 400 permissions
+1. Your .pem file on your Linux machine doesn't have 400 permissions
 
-Question 9
+### Question 9
 
 Your t2.small EC2 instance constantly runs out of CPU credits and therefore the performance is degraded. What is NOT a solution for this problem?
 
-    Upgrade the EC2 instance type to t2.medium or higher
-    Purchase CPU credits for your EC2 instances
-    Turn on t2 Unlimited
-    Upgrade to non-t* type of EC2 instance
+    1. Upgrade the EC2 instance type to t2.medium or higher
+    2. Purchase CPU credits for your EC2 instances
+    3. Turn on t2 Unlimited
+    4. Upgrade to non-t* type of EC2 instance
 
-Correct Answer
+**Correct Answer**
+
 2. Purchase CPU credits for your EC2 instances
-Question 10
+
+### Question 10
 
 You have installed Unified CloudWatch Agent on an EC2 instance to collect custom metrics from your EC2 instance. You want to know individual processes running on your EC2 instance and their system utilization. What would you use?
 
-    Configure Unified CloudWatch Agent with StatsD protocol
-    Configure Unified CloudWatch Agent with collectd protocol
-    Configure Unified CloudWatch Agent with procstat plugin
+    1. Configure Unified CloudWatch Agent with StatsD protocol
+    2. Configure Unified CloudWatch Agent with collectd protocol
+    3. Configure Unified CloudWatch Agent with procstat plugin
 
-Correct Answer
+**Correct Answer**
+
 3. Configure Unified CloudWatch Agent with procstat plugin
-Question 11
+
+### Question 11
 
 You want to stop your EC2 instance and at the same time, you don't want to lose the memory state, processes, etc. What would you do?
 
-    Terminate
-    Stop
-    Hibernate
-    Reboot
+    1. Terminate
+    2. Stop
+    3. Hibernate
+    4. Reboot
 
-Correct Answer
+**Correct Answer**
+
 3. Hibernate
-Question 12
+
+### Question 12
 
 You have an application that is known to perform memory leaks on EC2 instances and therefore you would like to monitor the EC2 instance's RAM using CloudWatch. How can you achieve this?
 
-    Enable EC2 detailed monitoring
-    Push RAM as a custom metric using the Unified CloudWatch Agent
-    Use EC2 basic monitoring
+    1. Enable EC2 detailed monitoring
+    2. Push RAM as a custom metric using the Unified CloudWatch Agent
+    3. Use EC2 basic monitoring
 
-Correct Answer
+**Correct Answer**
+
 2. Push RAM as a custom metric using the Unified CloudWatch Agent
-AMI Quiz
-Question 1
+
+## AMI Quiz
+
+### Question 1
 
 You are launching an EC2 instance in us-east-1 using AWS Lambda in us-east-1 using this Python script snippet:
 
-python
+python:
 
-ec2.create_instances(ImageId='ami-0dc2d3e4c0f9ebd18', MinCount=1, MaxCount=1)
+    ec2.create_instances(ImageId='ami-0dc2d3e4c0f9ebd18', MinCount=1, MaxCount=1)
 
 It works well, so you decide to deploy your AWS Lambda function in us-west-1 as well. There, the function does not work and fails with InvalidAMIID.NotFound error. What's the problem?
 
-    The new Lambda function is missing IAM permissions
-    AMI is region locked and the same AMI ID can not be used across regions
-    The AMI needs to first be shared with another region. The same AMI ID can then be used
+    1. The new Lambda function is missing IAM permissions
+    2. AMI is region locked and the same AMI ID can not be used across regions
+    3. The AMI needs to first be shared with another region. The same AMI ID can then be used
 
-Correct Answer
+**Correct Answer**
+
 2. AMI is region locked and the same AMI ID can not be used across regions
-Question 2
+
+### Question 2
 
 What are the steps required to migrate an EC2 instance to another AZ?
 
-    By doing right-click and select "Move", then select the desired AZ
-    Create an AMI from the EC2 instance, then use this AMI to create a new EC2 instance in the desired subnet/AZ
+    1. By doing right-click and select "Move", then select the desired AZ
+    2. Create an AMI from the EC2 instance, then use this AMI to create a new EC2 instance in the desired subnet/AZ
 
-Correct Answer
+**Correct Answer**
+
 2. Create an AMI from the EC2 instance, then use this AMI to create a new EC2 instance in the desired subnet/AZ
-Question 3
+
+### Question 3
 
 You have an AMI that has an encrypted EBS Snapshot. You want to share this AMI with another AWS account. You have shared the AMI with the desired AWS account, but the other AWS account can't use it. How would you solve this problem?
 
-    The other AWS account needs to logout and login again to refresh its credentials
-    You can't share an AMI that has an encrypted EBS Snapshot
-    You need to share the KMS CMK used to encrypt the AMI with the other AWS account
+    1. The other AWS account needs to logout and login again to refresh its credentials
+    2. You can't share an AMI that has an encrypted EBS Snapshot
+    3. You need to share the KMS CMK used to encrypt the AMI with the other AWS account
 
-Correct Answer
+**Correct Answer**
+
 3. You need to share the KMS CMK used to encrypt the AMI with the other AWS account
-Question 4
+
+### Question 4
 
 Your company has a critical application that's hosted on 100s of EC2 instances. The security team has created an AMI that's updated and has all the security patches installed. The DevOps team must create the EC2 instances from the AMI approved by the security team, but there's no IAM policy to prevent them from using another AMI. What AWS service would you use to ensure that all the EC2 instances are launched using the approved AMI?
 
-    Amazon Inspector
-    Amazon GuardDuty
-    AWS Config
-    AWS Security Hub
+    1. Amazon Inspector
+    2. Amazon GuardDuty
+    3. AWS Config
+    4. AWS Security Hub
 
-Correct Answer
+**Correct Answer**
+
 3. AWS Config
 
 ## SSM & OpsWorks Quiz
