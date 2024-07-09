@@ -1356,286 +1356,616 @@ Increase the amount of memory for the Lambda function
 ### Question 212
 
 "A company hosts a web application on an Amazon EC2 instance. The web server logs are published to Amazon CloudWatch Logs. The log events have the same structure and include the HTTP response codes that are associated with the user requests. The company needs to monitor the number of times that the web server returns an HTTP 404 response.
+What is the MOST operationally efficient solution that meets these requirements? "
 
-What is the MOST operationally efficient solution that meets these requirements? "	Create a CloudWatch Logs metric filter that counts the number of times that the web server returns an HTTP 404 response. 
+Create a CloudWatch Logs metric filter that counts the number of times that the web server returns an HTTP 404 response. 
+
+### Question 213
+
 "A company is attempting to manage its costs in the AWS Cloud. A SysOps administrator needs specific company-defined tags that are assigned to resources to appear on the billing report.
+What should the SysOps administrator do to meet this requirement? "	
 
-What should the SysOps administrator do to meet this requirement? "	Activate the tags as user-defined cost allocation tags. 
+Activate the tags as user-defined cost allocation tags. 
+
+### Question 214
+
 "A company is expanding globally and needs to back up data on Amazon Elastic Block Store (Amazon EBS) volumes to a different AWS Region. Most of the EBS volumes that store the data are encrypted, but some of the EBS volumes are unencrypted. The company needs the backup data from all the EBS volumes to be encrypted.
+Which solution will meet these requirements with the LEAST management overhead? "	 
 
-Which solution will meet these requirements with the LEAST management overhead? "	 Configure a lifecycle policy in Amazon Data Lifecycle Manager (Amazon DLM) to create the EBS volume snapshots with cross-Region backups enabled. Encrypt the snapshot copies by using AWS Key Management Service (AWS KMS). 
+Configure a lifecycle policy in Amazon Data Lifecycle Manager (Amazon DLM) to create the EBS volume snapshots with cross-Region backups enabled. Encrypt the snapshot copies by using AWS Key Management Service (AWS KMS). 
+
+### Question 215
+
 "A SysOps administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The SysOps administrator needs to manage the cluster by using the kubectl command line tool.
+Which of the following must be configured on the SysOps administrator’s machine so that kubectl can communicate with the cluster API server? "	
 
-Which of the following must be configured on the SysOps administrator’s machine so that kubectl can communicate with the cluster API server? "	The kubeconfig file
+The kubeconfig file
+
+### Question 216
+
 "A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company’s analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours.
+Which solution will meet these requirements MOST cost-effectively? "	
 
-Which solution will meet these requirements MOST cost-effectively? "	"	Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days."
+Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days."
+
+### Question 217
+
 "A company’s application currently uses an IAM role that allows all access to all AWS services. A SysOps administrator must ensure that the company’s IAM policies allow only the permissions that the application requires.
+How can the SysOps administrator create a policy to meet this requirement? "	
 
-How can the SysOps administrator create a policy to meet this requirement? "	Turn on AWS CloudTrail. Generate a policy by using AWS Identity and Access Management Access Analyzer. 
+Turn on AWS CloudTrail. Generate a policy by using AWS Identity and Access Management Access Analyzer. 
+
+### Question 218
+
 "A company is deploying a third-party unit testing solution that is delivered as an Amazon EC2 Amazon Machine Image (AMI). All system configuration data is stored in Amazon DynamoDB. The testing results are stored in Amazon S3.
-
 A minimum of three EC2 instances are required to operate the product. The company’s testing team wants to use an additional three EC2 instances when the Spot Instance prices are at a certain threshold. A SysOps administrator must implement a highly available solution that provides this functionality.
+Which solution will meet these requirements with the LEAST operational overhead? "	
 
-Which solution will meet these requirements with the LEAST operational overhead? "	Define an Amazon EC2 Auto Scaling group by using a launch template. Use the provided AMI in the launch template. Configure three On-Demand Instances and three Spot instances. Configure a maximum Spot Instance price in the launch template
+Define an Amazon EC2 Auto Scaling group by using a launch template. Use the provided AMI in the launch template. Configure three On-Demand Instances and three Spot instances. Configure a maximum Spot Instance price in the launch template
+
+### Question 219
+
 "A SysOps administrator creates an AWS CloudFormation template to define an application stack that can be deployed in multiple AWS Regions. The SysOps administrator also creates an Amazon CloudWatch dashboard by using the AWS Management Console. Each deployment of the application requires its own CloudWatch dashboard.
+How can the SysOps administrator automate the creation of the CloudWatch dashboard each time the application is deployed? "	
 
-How can the SysOps administrator automate the creation of the CloudWatch dashboard each time the application is deployed? "	"	Export the existing CloudWatch dashboard as JSON. Update the CloudFormation template to define an AWS::CloudWatch::Dashboard resource. Include the exported JSON in the resource’s DashboardBody property"
+Export the existing CloudWatch dashboard as JSON. Update the CloudFormation template to define an AWS::CloudWatch::Dashboard resource. Include the exported JSON in the resource’s DashboardBody property"
+
+### Question 220
+
 "A company updates its security policy to clarify cloud hosting arrangements for regulated workloads. Workloads that are identified as sensitive must run on hardware that is not shared with other customers or with other AWS accounts within the company.
+Which solution will ensure compliance with this policy? "	
 
-Which solution will ensure compliance with this policy? "	"	Deploy workloads only to Dedicated Hosts. "
+Deploy workloads only to Dedicated Hosts. 
+
+### Question 221
+
 "A user is measuring the CPU utilization of a private data center machine every minute. The machine provides the aggregate of data every hour, such as Sum of data`, `Min value`, `Max value, and `Number of Data points`.
-The user wants to send these values to CloudWatch. How can the user achieve this?"	"	Send the data using the put-metric-data command with the statistic-values parameter "
+The user wants to send these values to CloudWatch. How can the user achieve this?"	
+
+Send the data using the put-metric-data command with the statistic-values parameter
+
+### Question 222
+
 "A SysOps administrator wants to monitor the free disk space that is available on a set of Amazon EC2 instances that have Amazon Elastic Block Store (Amazon EBS) volumes attached. The SysOps administrator wants to receive a notification when the used disk space of the EBS volumes exceeds a threshold value, but only when the DiskReadOps metric also exceeds a threshold value. The SysOps administrator has set up an Amazon Simple Notification Service (Amazon SNS) topic.
+How can the SysOps administrator receive notification only when both metrics exceed their threshold values? "	
 
-How can the SysOps administrator receive notification only when both metrics exceed their threshold values? "	"	Install the Amazon CloudWatch agent on the EC2 instances. Create a metric alarm for the disk space and a metric alarm for the DiskReadOps metric. Create a composite alarm that includes the two metric alarms to publish a notification to the SNS topic."
+Install the Amazon CloudWatch agent on the EC2 instances. Create a metric alarm for the disk space and a metric alarm for the DiskReadOps metric. Create a composite alarm that includes the two metric alarms to publish a notification to the SNS topic.
+
+### Question 223
+
 "A company updates its security policy to prohibit the public exposure of any data in Amazon S3 buckets in the company's account.
+What should a SysOps administrator do to meet this requirement? "	
 
-What should a SysOps administrator do to meet this requirement? "	Turn on S3 Block Public Access from the account level.
+Turn on S3 Block Public Access from the account level.
+
+### Question 224
+
 "A company's SysOps administrator needs to change the AWS Support plan for one of the company's AWS accounts. The account has multi-factor authentication (MFA) activated, and the MFA device is lost.
+What should the SysOps administrator do to sign in? "	
 
-What should the SysOps administrator do to sign in? "	Sign in as a root user by using email and phone verification. Set up a new MFA device. Change the root user password. 
+Sign in as a root user by using email and phone verification. Set up a new MFA device. Change the root user password. 
+
+### Question 225
+
 "A company is creating a new multi-account architecture. A SysOps administrator must implement a login solution to centrally manage user access and permissions across all AWS accounts. The solution must be integrated with AWS Organizations and must be connected to a third-party Security Assertion Markup Language (SAML) 2.0 identity provider (IdP).
+What should the SysOps administrator do to meet these requirements? "	
 
-What should the SysOps administrator do to meet these requirements? "	Enable and configure AWS Single Sign-On with the third-party IdP
+Enable and configure AWS Single Sign-On with the third-party IdP
+
+### Question 226
+
 "A company is managing many accounts by using a single organization in AWS Organizations. The organization has all features enabled. The company wants to turn on AWS Config in all the accounts of the organization and in all AWS Regions.
+What should a SysOps administrator do to meet these requirements in the MOST operationally efficient way? "	
 
-What should a SysOps administrator do to meet these requirements in the MOST operationally efficient way? "	 Use AWS CloudFormation Stack Sets to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
+Use AWS CloudFormation Stack Sets to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
+
+### Question 227
+
 "A SysOps administrator needs to delete an AWS CloudFormation stack that is no longer in use. The CloudFormation stack is in the DELETE_FAILED state. The SysOps administrator has validated the permissions that are required to delete the CloudFormation stack.
+Which of the following are possible causes of the DELETE_FAILED state? (Choose two.) "	
 
-Which of the following are possible causes of the DELETE_FAILED state? (Choose two.) "	"	There are additional resources associated with a security group in the stack
-There are Amazon S3 buckets that still contain objects in the stack
-"
+- There are additional resources associated with a security group in the stack
+
+- There are Amazon S3 buckets that still contain objects in the stack
+
+### Question 228
+
 "A SysOps administrator needs to configure a solution that will deliver digital content to a set of authorized users through Amazon CloudFront. Unauthorized users must be restricted from access.
+Which solution will meet these requirements? "	
 
-Which solution will meet these requirements? "	"	Store the digital content in an Amazon S3 bucket that has public access blocked. Use an origin access identity (OAI) to deliver the content through CloudFront. Restrict S3 bucket access with signed URLs in CloudFront. "
+Store the digital content in an Amazon S3 bucket that has public access blocked. Use an origin access identity (OAI) to deliver the content through CloudFront. Restrict S3 bucket access with signed URLs in CloudFront.
+
+### Question 229
+
 "A SysOps administrator must ensure that a company's Amazon EC2 instances auto scale as expected. The SysOps administrator configures an Amazon EC2 Auto Scaling lifecycle hook to send an event to Amazon EventBridge (Amazon CloudWatch Events), which then invokes an AWS Lambda function to configure the EC2 instances. When the configuration is complete, the Lambda function calls the complete-lifecycle-action event to put the EC2 instances into service. In testing, the SysOps administrator discovers that the Lambda function is not invoked when the EC2 instances auto scale.
+What should the SysOps administrator do to resolve this issue? "	
 
-What should the SysOps administrator do to resolve this issue? "	"	Add a permission to the Lambda function so that it can be invoked by the EventBridge (CloudWatch Events) rule."
+Add a permission to the Lambda function so that it can be invoked by the EventBridge (CloudWatch Events) rule.
+
+### Question 230
+
 "A company has mandated the use of multi-factor authentication (MFA) for all IAM users, and requires users to make all API calls using the CLI. However, users are not prompted to enter MFA tokens, and are able to run CLI commands without MFA. In an attempt to enforce MFA, the company attached an IAM policy to all users that denies API calls that have not been authenticated with MFA.
+What additional step must be taken to ensure that API calls are authenticated using MFA? "
 
-What additional step must be taken to ensure that API calls are authenticated using MFA? "	 Require users to use temporary credentials from the get-session token command to sign API calls. 
+Require users to use temporary credentials from the get-session token command to sign API calls. 
+
+### Question 231
+
 "A SysOps administrator is configuring AWS Client VPN to connect users on a corporate network to AWS resources that are running in a VPC. According to compliance requirements, only traffic that is destined for the VPC can travel across the VPN tunnel.
+How should the SysOps administrator configure Client VPN to meet these requirements? "	
 
-How should the SysOps administrator configure Client VPN to meet these requirements? "	"	On the Client VPN endpoint, turn on the split-tunnel option"
+On the Client VPN endpoint, turn on the split-tunnel option
+
+### Question 232
+
 "A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the ALB target group.
+What is a possible reason for this issue? "
 
-What is a possible reason for this issue? "	"	The target group health check is configured with an incorrect port or path"
+The target group health check is configured with an incorrect port or path
+
+### Question 233
+
 "A SysOps administrator notices a scale up event for an Amazon EC2 Auto Scaling group. Amazon CloudWatch shows a spike in the RequestCount metric for the associated Application Load Balancer. The administrator would like to know the IP addresses for the source of the requests.
+Where can the administrator find this information? "	 
 
-Where can the administrator find this information? "	 Elastic Load Balancer access logs 
+Elastic Load Balancer access logs 
+
+### Question 234
+
 "A company plans to migrate several of its high performance computing (HPC) virtual machines (VMs) to Amazon EC2 instances on AWS. A SysOps administrator must identify a placement group for this deployment. The strategy must minimize network latency and must maximize network throughput between the HPC VMs.
+Which strategy should the SysOps administrator choose to meet these requirements? "	
 
-Which strategy should the SysOps administrator choose to meet these requirements? "	Deploy the instances in a cluster placement group in one Availability Zone. 
+Deploy the instances in a cluster placement group in one Availability Zone. 
+
+### Question 235
+
 "An errant process is known to use an entire processor and run at 100%. A SysOps administrator wants to automate restarting an Amazon EC2 instance when the problem occurs for more than 2 minutes.
+How can this be accomplished? "
 
-How can this be accomplished? "	Create an Amazon CloudWatch alarm for the EC2 instance with detailed monitoring. Add an action to restart the instance
+Create an Amazon CloudWatch alarm for the EC2 instance with detailed monitoring. Add an action to restart the instance
+
+### Question 236
+
 "A company maintains a large set of sensitive data in an Amazon S3 bucket. The company's security team asks a SysOps administrator to help verify that all current objects in the S3 bucket are encrypted.
+What is the MOST operationally efficient solution that meets these requirements? "	
 
-What is the MOST operationally efficient solution that meets these requirements? "	"	Create an S3 Inventory configuration on the S3 bucket. Include the appropriate status fields. "
+Create an S3 Inventory configuration on the S3 bucket. Include the appropriate status fields.
+
+### Question 237
+
 "Users are periodically experiencing slow response times from a relational database. The database runs on a burstable Amazon EC2 instance with a 350 GB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volume. A SysOps administrator monitors the EC2 instance in Amazon CloudWatch and observes that the VolumeReadOps metric drops to less than 10% of its peak value during the periods of slow response.
+What should the SysOps administrator do to ensure consistently high performance? "	
 
-What should the SysOps administrator do to ensure consistently high performance? "	ctivate unlimited mode on the EC2 instance
+Activate unlimited mode on the EC2 instance
+
+### Question 238
+
 "A SysOps administrator is optimizing the cost of a workload. The workload is running in multiple AWS Regions and is using AWS Lambda with Amazon EC2 On-Demand Instances for the computer. The overall usage is predictable. The amount of computer that is consumed in each Region varies, depending on the users' locations.
+Which approach should the SysOps administrator use to optimize this workload? "	
 
-Which approach should the SysOps administrator use to optimize this workload? "	 Purchase Computer Savings Plans based on the usage during the past 30 days
+Purchase Computer Savings Plans based on the usage during the past 30 days
+
+### Question 239
+
 "A software company runs a workload on Amazon EC2 instances behind an Application Load Balancer (ALB). A SysOps administrator needs to define a custom health check for the EC2 instances.
+What is the MOST operationally efficient solution? "	
 
-What is the MOST operationally efficient solution? "	"	Configure the health check on the ALB and ensure that the Health Check Path setting is correct."
+Configure the health check on the ALB and ensure that the Health Check Path setting is correct.
+
+### Question 240
+
 "A SysOps administrator is required to monitor free space on Amazon EBS volumes attached to Microsoft Windows-based Amazon EC2 instances within a company's account. The administrator must be alerted to potential issues.
+What should the administrator do to receive email alerts before low storage space affects EC2 instance performance? "
 
-What should the administrator do to receive email alerts before low storage space affects EC2 instance performance? "	Use the Amazon CloudWatch agent to send disk space metrics, then set up CloudWatch alarms using an Amazon SNS topic.
+Use the Amazon CloudWatch agent to send disk space metrics, then set up CloudWatch alarms using an Amazon SNS topic.
+
+### Question 241
+
 "A company applies user-defined tags to resources that are associated with the company's AWS workloads. Twenty days after applying the tags, the company notices that it cannot use the tags to filter views in the AWS Cost Explorer console.
+What is the reason for this issue? "	
 
-What is the reason for this issue? "	The company has not activated the user-defined tags for cost allocation.
+The company has not activated the user-defined tags for cost allocation.
+
+### Question 242
+
 "A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in its own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups.
+What should a SysOps administrator do to meet this requirement? "	
 
-What should a SysOps administrator do to meet this requirement? "	"	Perform a CloudWatch Logs Insights query that uses the stats command and count function."
+Perform a CloudWatch Logs Insights query that uses the stats command and count function.
+
+### Question 243
+
 "A company with multiple AWS accounts needs to obtain recommendations for AWS Lambda functions and identify optimal resource configurations for each Lambda function.
+How should a SysOps administrator provide these recommendations? "	 
 
-How should a SysOps administrator provide these recommendations? "	 Enable AWS Compute Optimizer and export the Lambda function recommendations
+Enable AWS Compute Optimizer and export the Lambda function recommendations
+
+### Question 244
+
 "A company uses AWS CloudFormation templates to deploy cloud infrastructure. An analysis of all the company's templates shows that the company has declared the same components in multiple templates. A SysOps administrator needs to create dedicated templates that have their own parameters and conditions for these common components.
+Which solution will meet this requirement? "	
 
-Which solution will meet this requirement? "	"	Develop CloudFormation nested stacks."
+Develop CloudFormation nested stacks.
+
+### Question 245
+
 "A SysOps administrator is building a process for sharing Amazon RDS database snapshots between different accounts associated with different business units within the same company. All data must be encrypted at rest.
+How should the administrator implement this process?"	
 
-How should the administrator implement this process?"	Update the key policy to grant permission to the AWS KMS encryption key used to encrypt the snapshot with all relevant accounts, then share the snapshot with those accounts
+Update the key policy to grant permission to the AWS KMS encryption key used to encrypt the snapshot with all relevant accounts, then share the snapshot with those accounts
+
+### Question 246
+
 "A SysOps administrator configures an Amazon S3 gateway endpoint in a VPC. The private subnets inside the VPC do not have outbound internet access. User logs in to an Amazon EC2 instance in one of the private subnets and cannot upload a file to an Amazon S3 bucket in the same AWS Region.
+Which solution will solve this problem? "	
 
-Which solution will solve this problem? "	Update the S3 bucket policy to allow s3:PutObject access from the private subnet CIDR block
- A user has created an Auto Scaling group using CLI. The user wants to enable CloudWatch detailed monitoring for that group. How can the user configure this?	By default detailed monitoring is enabled for Auto Scaling 
+Update the S3 bucket policy to allow s3:PutObject access from the private subnet CIDR block
+
+### Question 247
+
+"A user has created an Auto Scaling group using CLI. The user wants to enable CloudWatch detailed monitoring for that group. How can the user configure this?"
+
+By default detailed monitoring is enabled for Auto Scaling 
+
+### Question 248
+
 "A SysOps administrator is helping a development team deploy an application to AWS. The AWS CloudFormation template includes an Amazon Linux EC2 instance, an Amazon Aurora DB cluster, and a hardcoded database password that must be rotated every 90 days.
+What is the MOST secure way to manage the database password? "	
 
-What is the MOST secure way to manage the database password? "	Use the AWS::SecretsManager::Secret resource with the GenerateSecretString property to automatically generate a password. Use the AWS::SecretsManager::RotationSchedule resource to define a rotation schedule for the password. Configure the application to retrieve the secret from AWS Secrets Manager to access the database
+Use the AWS::SecretsManager::Secret resource with the GenerateSecretString property to automatically generate a password. Use the AWS::SecretsManager::RotationSchedule resource to define a rotation schedule for the password. Configure the application to retrieve the secret from AWS Secrets Manager to access the database
+
+### Question 249
+
 "A company's SysOps administrator maintains a highly available environment. The environment includes Amazon EC2 instances and an Amazon RDS Multi-AZ database. The EC2 instances are in an Auto Scaling group behind an Application Load Balancer.
-
 Recently, the company conducted a failover test. The SysOps administrator needs to decrease the failover time of the RDS database by at least 10%.
+Which solution will meet this requirement? "	
 
-Which solution will meet this requirement? "	"	Create an RDS proxy. Point the application to the proxy endpoint."
+Create an RDS proxy. Point the application to the proxy endpoint.
+
+### Question 250
+
 "A company's VPC has connectivity to an on-premises data center through an AWS Site-to-Site VPN. The company needs Amazon EC2 instances in the VPC to send DNS queries for example.com to the DNS servers in the data center.
+Which solution will meet these requirements? "
 
-Which solution will meet these requirements? "	Create an Amazon Route 53 Resolver outbound endpoint. Create a forwarding rule on the resolver that sends all queries for example.com to the on-premises DNS servers. Associate this rule with the VPC.
+Create an Amazon Route 53 Resolver outbound endpoint. Create a forwarding rule on the resolver that sends all queries for example.com to the on-premises DNS servers. Associate this rule with the VPC.
+
+### Question 251
+
 "A SysOps administrator is tasked with analyzing database performance. The database runs on a single Amazon RDS DB instance. The SysOps administrator finds that, during times of peak traffic, resources on the database are overutilized due to the amount of read traffic.
+Which actions should the SysOps administrator take to improve RDS performance? (Choose two.) "	
 
-Which actions should the SysOps administrator take to improve RDS performance? (Choose two.) "	"Add a read replica 
-Modify the application to use Amazon ElastiCache for Memcached"
+- Add a read replica 
+
+- Modify the application to use Amazon ElastiCache for Memcached
+
+### Question 252
+
 "A company's SysOps administrator has created an Amazon EC2 instance with custom software that will be used as a template for all new EC2 instances across multiple AWS accounts. The Amazon Elastic Block Store (Amazon EBS) volumes that are attached to the EC2 instance are encrypted with AWS managed keys.
-
 The SysOps administrator creates an Amazon Machine Image (AMI) of the custom EC2 instance and plans to share the AMI with the company's other AWS accounts. The company requires that all AMIs are encrypted with AWS Key Management Service (AWS KMS) keys and that only authorized AWS accounts can access the shared AMIs.
+Which solution will securely share the AMI with the other AWS accounts? "
 
-Which solution will securely share the AMI with the other AWS accounts? "	In the account where the AMI was created, create a customer managed KMS key. Modify the key policy to provide kms:DescribeKey, kms:ReEncrypt*, kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI, and specify the KMS key. Modify the permissions on the copied AMI to specify the AWS account numbers that the AMI will be shared with.
+In the account where the AMI was created, create a customer managed KMS key. Modify the key policy to provide kms:DescribeKey, kms:ReEncrypt*, kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI, and specify the KMS key. Modify the permissions on the copied AMI to specify the AWS account numbers that the AMI will be shared with.
+
+### Question 253
+
 "A company is migrating its production file server to AWS. All data that is stored on the file server must remain accessible if an Availability Zone becomes unavailable or when system maintenance is performed. Users must be able to interact with the file server through the SMB protocol. Users also must have the ability to manage file permissions by using Windows ACLs.
+Which solution will meet these requirements? "
 
-Which solution will meet these requirements? "	Create an Amazon FSx for Windows File Server Multi-AZ file system.
+Create an Amazon FSx for Windows File Server Multi-AZ file system.
+
+### Question 254
+
 "A SysOps administrator needs to create alerts that are based on the read and write metrics of Amazon Elastic Block Store (Amazon EBS) volumes that are attached to an Amazon EC2 instance. The SysOps administrator creates and enables Amazon CloudWatch alarms for the DiskReadBytes metric and the DiskWriteBytes metric.
-
 A custom monitoring tool that is installed on the EC2 instance with the same alarm configuration indicates that the volume metrics have exceeded the threshold. However, the CloudWatch alarms were not in ALARM state.
+Which action will ensure that the CloudWatch alarms function correctly?"
 
-Which action will ensure that the CloudWatch alarms function correctly?"	Reconfigure the CloudWatch alarms to use the VolumeReadBytes metric and the VolumeWriteBytes metric for the EBS volumes
+Reconfigure the CloudWatch alarms to use the VolumeReadBytes metric and the VolumeWriteBytes metric for the EBS volumes
+
+### Question 255
+
 "A company recently moved its server infrastructure to Amazon EC2 instances. The company wants to use Amazon CloudWatch metrics to track instance memory utilization and available disk space.
+What should a SysOps administrator do to meet these requirements? "
 
-What should a SysOps administrator do to meet these requirements? "	"	Install and configure the CloudWatch agent on all the instances. Attach an IAM role to allow the instances to write logs to CloudWatch"
+Install and configure the CloudWatch agent on all the instances. Attach an IAM role to allow the instances to write logs to CloudWatch
+
+### Question 256
+
 "A company recently deployed MySQL on an Amazon EC2 instance with a default boot volume. The company intends to restore a 1.75 TB database. A SysOps administrator needs to provision the correct Amazon Elastic Block Store (Amazon EBS) volume. The database will require read performance of up to 10,000 IOPS and is not expected to grow in size.
+Which solution will provide the required performance at the LOWEST cost?"
 
-Which solution will provide the required performance at the LOWEST cost? "	Deploy a 2 TB General Purpose SSD (gp3) volume. Set the IOPS to 10,000. 
+Deploy a 2 TB General Purpose SSD (gp3) volume. Set the IOPS to 10,000. 
+
+### Question 257
+
 "A SysOps administrator is setting up a fleet of Amazon EC2 instances in an Auto Scaling group for an application. The fleet should have 50% CPU available at all times to accommodate bursts of traffic. The load will increase significantly between the hours of 09:00 and 17:00, 7 days a week.
+How should the SysOps administrator configure the scaling of the EC2 instances to meet these requirements? "	
 
-How should the SysOps administrator configure the scaling of the EC2 instances to meet these requirements? "	Create a target tracking scaling policy that runs when the CPU utilization is higher than 50%. Create a scheduled scaling policy that ensures that the fleet is available at 09:00. Create a second scheduled scaling policy that scales in the fleet at 17:00.
+Create a target tracking scaling policy that runs when the CPU utilization is higher than 50%. Create a scheduled scaling policy that ensures that the fleet is available at 09:00. Create a second scheduled scaling policy that scales in the fleet at 17:00.
+
+### Question 258
+
 "A company is running Amazon EC2 On-Demand Instances in an Auto Scaling group. The instances process messages from an Amazon Simple Queue Service (Amazon SQS) queue. The Auto Scaling group is set to scale based on the number of messages in the queue. Messages can take up to 12 hours to process completely. A SysOps administrator must ensure that instances are not interrupted during message processing.
+What should the SysOps administrator do to meet these requirements? "
 
-What should the SysOps administrator do to meet these requirements? "	Enable instance scale-in protection for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Disable instance scale-in protection after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script
+Enable instance scale-in protection for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Disable instance scale-in protection after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script
 An organization is trying to create various IAM users. Which of the below mentioned options is not a valid IAM username?	john#cloud 
+
+### Question 259
+
 "A company is developing a mobile shopping web app. The company needs an environment that is configured to encrypt all resources in transit and at rest.
 A security engineer must develop a solution that will encrypt traffic in transit to the company's Application Load Balancer and Amazon API Gateway resources.
 The solution also must encrypt traffic at rest for Amazon S3 storage.
-What should the security engineer do to meet these requirements?"	Use AWS Certificate Manager (ACM) for encryption in transit. Use AWS Key Management Service for encryption at rest. 
+What should the security engineer do to meet these requirements?"	
+
+Use AWS Certificate Manager (ACM) for encryption in transit. Use AWS Key Management Service for encryption at rest. 
+
+### Question 260
+
 "A SysOps administrator needs to collect the content of log files from a custom application that is deployed across hundreds of Amazon EC2 instances running Ubuntu. The log files need to be stored in Amazon CloudWatch Logs.
+How should the SysOps administrator collect the application log files with the LOWEST operational overhead? "	
 
-How should the SysOps administrator collect the application log files with the LOWEST operational overhead? "	Store a CloudWatch agent configuration in the AWS Systems Manager Parameter Store. Install the CloudWatch agent on each EC2 instance by using Systems Manager. Configure each agent to collect the application log files.
-A user wants to upload a complete folder to AWS S3 using the S3 Management console. How can the user perform this activity?	 Use the Enable Enhanced Uploader option from the S3 console while uploading objects 
+Store a CloudWatch agent configuration in the AWS Systems Manager Parameter Store. Install the CloudWatch agent on each EC2 instance by using Systems Manager. Configure each agent to collect the application log files.
+
+### Question 261
+
+"A user wants to upload a complete folder to AWS S3 using the S3 Management console. How can the user perform this activity?"
+
+Use the Enable Enhanced Uploader option from the S3 console while uploading objects 
+
+### Question 262
+
 "A SysOps administrator is creating a simple, public-facing website running on Amazon EC2. The SysOps administrator created the EC2 instance in an existing public subnet and assigned an Elastic IP address to the instance. Next, the SysOps administrator created and applied a new security group to the instance to allow incoming HTTP traffic from 0.0.0.0/0. Finally, the SysOps administrator created a new network ACL and applied it to the subnet to allow incoming HTTP traffic from 0.0.0.0/0. However, the website cannot be reached from the internet.
+What is the cause of this issue? "	
 
-What is the cause of this issue? "	"	The SysOps administrator did not create an outbound rule that allows ephemeral port return traffic in the new network ACL."
+The SysOps administrator did not create an outbound rule that allows ephemeral port return traffic in the new network ACL.
+
+### Question 263
+
 "A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system. A recent incident that involved an application logic error corrupted several files. The company wants to improve its ability to back up and recover the EFS file system. The company must be able to recover individual files rapidly.
+Which solution meets these requirements MOST cost-effectively? "	
 
-Which solution meets these requirements MOST cost-effectively? "	Enable AWS Backup in Amazon EFS to back up the file system to a backup vault. Use a partial restore job to retrieve individual files. 
+Enable AWS Backup in Amazon EFS to back up the file system to a backup vault. Use a partial restore job to retrieve individual files. 
+
+### Question 264
+
 "A company needs to view a list of security groups that are open to the internet on port 3389.
+What should a SysOps administrator do to meet this requirement? "	
 
-What should a SysOps administrator do to meet this requirement? "	"	Use AWS Trusted Advisor to find security groups that allow unrestricted access on port 3389."
+Use AWS Trusted Advisor to find security groups that allow unrestricted access on port 3389.
+
+### Question 265
+
 "A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon RDS for MySQL Multi-AZ DB instance. The database subnet network ACLs are restricted to only the web subnets that need access to the database. The web subnets use the default network ACL with the default rules.
-
 The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups.
+Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Choose two.) "	
 
-Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Choose two.) "	"On the network ACLs for the database subnets, create an inbound Allow rule of type MySQL/Aurora (3306). Specify the source as the third web subnet. 
-On the network ACLs for the database subnets, create an outbound Allow rule of type TCP with the ephemeral port range and the destination as the third web subnet."
+- On the network ACLs for the database subnets, create an inbound Allow rule of type MySQL/Aurora (3306). Specify the source as the third web subnet. 
+
+- On the network ACLs for the database subnets, create an outbound Allow rule of type TCP with the ephemeral port range and the destination as the third web subnet.
+
+### Question 266
+
 "A SysOps administrator has been able to consolidate multiple, secure websites onto a single server, and each site is running on a different port. The administrator now wants to start a duplicate server in a second Availability Zone and put both behind a load balancer for high availability.
+What would be the command line necessary to deploy one of the sites’ certificates to the load balancer? "	
 
-What would be the command line necessary to deploy one of the sites’ certificates to the load balancer? "	aws elb set-load-balancer-listener-ssl-certificate --load-balancer-name my-load-balancer –-load-balancer-port 443 –-ssl-certificate-id arn:aws:iam::123456789012:server-certificate/new-server-cert 
- A user is creating a Cloudformation stack. Which of the below mentioned limitations does not hold true for Cloudformation?	One account by default is limited to 100 templates 
+aws elb set-load-balancer-listener-ssl-certificate --load-balancer-name my-load-balancer –-load-balancer-port 443 –-ssl-certificate-id arn:aws:iam::123456789012:server-certificate/new-server-cert 
+
+### Question 267
+
+A user is creating a Cloudformation stack. Which of the below mentioned limitations does not hold true for Cloudformation?	
+
+One account by default is limited to 100 templates 
+
+### Question 268
+
 "An AWS CloudFormation template creates an Amazon RDS instance. This template is used to build up development environments as needed and then delete the stack when the environment is no longer required. The RDS-persisted data must be retained for further use, even after the CloudFormation stack is deleted.
+How can this be achieved in a reliable and efficient way? "	
 
-How can this be achieved in a reliable and efficient way? "	Use the Snapshot Deletion Policy in the CloudFormation template definition of the RDS instance
+Use the Snapshot Deletion Policy in the CloudFormation template definition of the RDS instance
+
+### Question 269
+
 "An organization has created a Queue named `modularqueue` with SQS. The organization is not performing any operations such as SendMessage,
-ReceiveMessage, DeleteMessage, GetQueueAttributes, SetQueueAttributes, AddPermission, and RemovePermission on the queue. What can happen in this scenario?"	AWS SQS can delete queue after 30 days without notification 
+ReceiveMessage, DeleteMessage, GetQueueAttributes, SetQueueAttributes, AddPermission, and RemovePermission on the queue. What can happen in this scenario?"	
+
+AWS SQS can delete queue after 30 days without notification 
+
+### Question 270
+
 "A company uses Amazon S3 to aggregate raw video footage from various media teams across the US. The company recently expanded into new geographies in Europe and Australia. The technical teams located in Europe and Australia reported delays when uploading large video files into the destination S3 bucket in the United States.
+What are the MOST cost effective ways to increase upload speeds into the S3 bucket? (Choose two.) "	
 
-What are the MOST cost effective ways to increase upload speeds into the S3 bucket? (Choose two.) "	" Use Amazon S3 Transfer Acceleration for file uploads into the destination S3 bucket
-Use multipart uploads for file uploads into the destination S3 bucket from the branch offices in Europe and Australia."
+- Use Amazon S3 Transfer Acceleration for file uploads into the destination S3 bucket
+
+- Use multipart uploads for file uploads into the destination S3 bucket from the branch offices in Europe and Australia.
+
+### Question 271
+
 "A SysOps administrator needs to provision a new fleet of Amazon EC2 Spot Instances in an Amazon EC2 Auto Scaling group. The Auto Scaling group will use a wide range of instance types. The configured fleet must come from pools that have the most availability for the number of instances that are launched.
+Which solution will meet these requirements"
 
-Which solution will meet these requirements"	"	Launch the Spot Instances by using the capacity optimized strategy"
+Launch the Spot Instances by using the capacity optimized strategy
+
+### Question 272
+
 "A SysOps administrator creates a custom Amazon Machine Image (AMI) in the eu-west-2 Region and uses the AMI to launch Amazon EC2 instances. The SysOps administrator needs to use the same AMI to launch EC2 instances in two other Regions: us-east-1 and us-east-2.
+What must the SysOps administrator do to use the custom AMI in the additional Regions"	
 
-What must the SysOps administrator do to use the custom AMI in the additional Regions"	Copy the AMI to the additional Regions.
+Copy the AMI to the additional Regions.
+
+### Question 273
+
 "A company has many accounts in an organization in AWS Organizations. The company must automate resource provisioning from the organization’s management account to the member accounts.
+Which solution will meet this requirement? "	
 
-Which solution will meet this requirement? "	Create an AWS CloudFormation stack set. Deploy the stack set to all member accounts
+Create an AWS CloudFormation stack set. Deploy the stack set to all member accounts
+
+### Question 274
+
 "A company is building an interactive application for personal finance. The application stores financial data in Amazon S3, and the data must be encrypted. The company does not want to provide its own encryption keys. However, the company wants to maintain an audit trail that shows when an encryption key was used and who used the key.
+Which solution will meet these requirements? "	
 
-Which solution will meet these requirements? "	Use server-side encryption with AWS KMS managed encryption keys (SSE-KMS) to encrypt the user data on Amazon S3. 
+Use server-side encryption with AWS KMS managed encryption keys (SSE-KMS) to encrypt the user data on Amazon S3. 
+
+### Question 275
+
 "A company has an AWS CloudFormation template that creates an Amazon S3 bucket. A user authenticates to the corporate AWS account with their Active Directory credentials and attempts to deploy the CloudFormation template. However, the stack creation fails.
+Which factors could cause this failure? (Choose two.) "	
 
-Which factors could cause this failure? (Choose two.) "	"The user’s IAM policy does not allow the cloudformation:CreateStack action. 
-The user’s IAM policy does not allow the s3:CreateBucket action."
+- The user’s IAM policy does not allow the cloudformation:CreateStack action. 
+
+- The user’s IAM policy does not allow the s3:CreateBucket action.
+
+### Question 276
+
 "An Amazon RDS for PostgreSQL DB cluster has automated backups turned on with a 7-day retention period. A SysOps administrator needs to create a new RDS DB cluster by using data that is no more than 24 hours old from the original DB cluster.
+Which solutions will meet these requirements with the LEAST operational overhead? (Choose two.) "	
 
-Which solutions will meet these requirements with the LEAST operational overhead? (Choose two.) "	"	Identify the most recent automated snapshot. Restore the snapshot to a new RDS DB cluster
-Create a read replica instance in the original RDS DB cluster. Promote the read replica to a standalone DB cluster."
+- Identify the most recent automated snapshot. Restore the snapshot to a new RDS DB cluster
+
+- Create a read replica instance in the original RDS DB cluster. Promote the read replica to a standalone DB cluster.
+
+### Question 277
+
 "A company is managing a website with a global user base hosted on Amazon EC2 with an Application Load Balancer (ALB). To reduce the load on the web servers, a SysOps administrator configures an Amazon CloudFront distribution with the ALB as the origin. After a week of monitoring the solution, the administrator notices that requests are still being served by the ALB and there is no change in the web server load.
+What are possible causes for this problem? (Choose two.) "
 
-What are possible causes for this problem? (Choose two.) "	"The DNS is still pointing to the ALB instead of the CloudFront distribution.
-The default, minimum, and maximum Time to Live (TTL) are set to 0 seconds on the CloudFront distribution."
+- The DNS is still pointing to the ALB instead of the CloudFront distribution.
+
+- The default, minimum, and maximum Time to Live (TTL) are set to 0 seconds on the CloudFront distribution.
+
+### Question 278
+
 "A SysOps administrator needs to configure the Amazon Route 53 hosted zone for example.com and www.example.com to point to an Application Load Balancer (ALB).
+Which combination of actions should the SysOps administrator take to meet these requirements? (Choose two.) "	
 
-Which combination of actions should the SysOps administrator take to meet these requirements? (Choose two.) "	"Configure an alias record for example.com to point to the CNAME of the ALB.
-Configure an alias record for www.example.com to point to the Route 53 example.com record"
+- Configure an alias record for example.com to point to the CNAME of the ALB.
+
+- Configure an alias record for www.example.com to point to the Route 53 example.com record
+
+### Question 279
+
 "A company has a hybrid environment. The company has set up an AWS Direct Connect connection between the company's on-premises data center and a workload that runs in a VPC. The company uses Amazon Route 53 for DNS on AWS. The company uses a private hosted zone to manage DNS names for a set of services that are hosted on AWS.
-
 The company wants the on-premises servers to use Route 53 for DNS resolution of the private hosted zone.
+Which solution will meet these requirements? "	
 
-Which solution will meet these requirements? "	"	Create a Route 53 inbound endpoint. Ensure that security groups and routing allow the traffic from the on-premises data center. Configure the DNS server on the on-premises network to conditionally forward DNS queries for the private hosted zone's domain name to the IP addresses of the inbound endpoint."
+Create a Route 53 inbound endpoint. Ensure that security groups and routing allow the traffic from the on-premises data center. Configure the DNS server on the on-premises network to conditionally forward DNS queries for the private hosted zone's domain name to the IP addresses of the inbound endpoint.
+
+### Question 280
+
 "A SysOps administrator is evaluating Amazon Route 53 DNS options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx HTTP codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID, and routing policy have been set appropriately for both primary and secondary servers.
+Which next step should be taken to configure Route 53?"	
 
-Which next step should be taken to configure Route 53?"	Create an A record for each server. Associate the records with the Route 53 HTTP health check.
+Create an A record for each server. Associate the records with the Route 53 HTTP health check.
+
+### Question 281
+
 "A company is building a web application on AWS. The company is using Amazon CloudFront with a domain name of www.example.com. All traffic to CloudFront must be encrypted in transit. The company already has provisioned an SSL certificate for www.example.com in AWS Certificate Manager (ACM).
+Which combination of steps should a SysOps administrator take to encrypt the traffic in transit? (Choose two.) "	
 
-Which combination of steps should a SysOps administrator take to encrypt the traffic in transit? (Choose two.) "	" For each cache behavior in the CloudFront distribution, modify the Viewer Protocol Policy setting to redirect HTTP to HTTPS. 
-nter the alternate domain name (CNAME) of www.example.com for the CloudFront distribution. Select the custom SSL certificate. "
+- For each cache behavior in the CloudFront distribution, modify the Viewer Protocol Policy setting to redirect HTTP to HTTPS. 
+
+- Enter the alternate domain name (CNAME) of www.example.com for the CloudFront distribution. Select the custom SSL certificate.
+
+### Question 282
+
 "A company runs an application on hundreds of Amazon EC2 instances in three Availability Zones. The application calls a third-party API over the public internet. A SysOps administrator must provide the third party with a list of static IP addresses so that the third party can allow traffic from the application.
+Which solution will meet these requirements? "	
 
-Which solution will meet these requirements? "	Add a NAT gateway in the public subnet of each Availability Zone. Make the NAT gateway the default route of all private subnets in those Availability Zones.
+Add a NAT gateway in the public subnet of each Availability Zone. Make the NAT gateway the default route of all private subnets in those Availability Zones.
+
+### Question 283
+
 "A company manages its multi-account environment by using AWS Organizations. The company needs to automate the creation of daily incremental backups of any Amazon Elastic Block Store (Amazon EBS) volume that is marked with a Lifecycle: Production tag in one of its primary AWS accounts.
-
 The company wants to prevent users from using Amazon EC2 * permissions to delete any of these production snapshots.
+What should a SysOps administrator do to meet these requirements? "	
 
-What should a SysOps administrator do to meet these requirements? "	Associate a service control policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags
+Associate a service control policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags
+
+### Question 284
+
 "A company hosts a Windows-based file server on a fleet of Amazon EC2 instances across multiple Availability Zones. The current setup does not allow application servers to access files simultaneously from the EC2 fleet.
+Which solution will allow this access in the MOST operationally efficient way? "	
 
-Which solution will allow this access in the MOST operationally efficient way? "	"	Create an Amazon FSx for Windows File Server Multi-AZ file system. Copy the files to the Amazon FSx file system. Adjust the connections from the application servers to use the share that the Amazon FSx file system exposes."
+Create an Amazon FSx for Windows File Server Multi-AZ file system. Copy the files to the Amazon FSx file system. Adjust the connections from the application servers to use the share that the Amazon FSx file system exposes.
+
+### Question 285
+
 "A company has deployed an application on Amazon EC2 instances in a single VPC. The company has placed the EC2 instances in a private subnet in the VPC.
-
 The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet.
+Which solution will meet these requirements? "	 
 
-Which solution will meet these requirements? "	 Create an S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
+Create an S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
+
+### Question 286
+
 "A company has a public web application that experiences rapid traffic increases after advertisements appear on local television. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The Auto Scaling group is not keeping up with the traffic surges after an advertisement runs. The company often needs to scale out to 100 EC2 instances during the traffic surges.
-
 The instance startup times are lengthy because of a boot process that creates machine-specific data caches that are unique to each instance. The exact timing of when the advertisements will appear on television is not known. A SysOps administrator must implement a solution so that the application can function properly during the traffic surges.
+Which solution will meet these requirements? "	
 
-Which solution will meet these requirements? "	Create e warm pool. Keep enough instances in the Stopped state to meet the increased demand.
+Create e warm pool. Keep enough instances in the Stopped state to meet the increased demand.
+
+### Question 287
+
 "A company hosts an internal application on Amazon EC2 On-Demand Instances behind an Application Load Balancer (ALB). The instances are in an Amazon EC2 Auto Scaling group. Employees use the application to provide product prices to potential customers. The Auto Scaling group is configured with a dynamic scaling policy and tracks average CPU utilization of the instances.
-
 Employees have noticed that sometimes the application becomes slow or unresponsive. A SysOps administrator finds that some instances are experiencing a high CPU load. The Auto Scaling group cannot scale out because the company is reaching the EC2 instance service quota.
-
 The SysOps administrator needs to implement a solution that provides a notification when the company reaches 70% or more of the EC2 instance service quota.
+Which solution will meet these requirements in the MOST operationally efficient manner? "	
 
-Which solution will meet these requirements in the MOST operationally efficient manner? "	"	Use the Service Quotas console to create an Amazon CloudWatch alarm for the EC2 instances. Configure the alarm with quota utilization equal to or greater than 70%. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters ALARM state."
+Use the Service Quotas console to create an Amazon CloudWatch alarm for the EC2 instances. Configure the alarm with quota utilization equal to or greater than 70%. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters ALARM state."
+
+### Question 288
+
 "A company has a policy that all Amazon EC2 instance logs must be published to Amazon CloudWatch Logs. A SysOps administrator is troubleshooting an EC2 instance that is running Amazon Linux 2. The EC2 instance is not publishing logs to CloudWatch Logs. The Amazon CloudWatch agent is running on the EC2 instance, and the agent configuration file is correct.
+What should the SysOps administrator do to resolve the issue? "	
 
-What should the SysOps administrator do to resolve the issue? "	Ensure that the IAM role that is attached to the EC2 instance has permissions in CloudWatch Logs for the CreateLogGroup, CreateLogStream, PutLogEvents, and DescribeLogStreams actions. 
+Ensure that the IAM role that is attached to the EC2 instance has permissions in CloudWatch Logs for the CreateLogGroup, CreateLogStream, PutLogEvents, and DescribeLogStreams actions. 
+
+### Question 289
+
 "A company runs a workload on an Amazon EC2 instance. The workload needs a temporary cache that contains data that changes frequently. The workload does not need to retain the cache across instance restarts.
+Which storage option will provide the HIGHEST performance for the cache? "	
 
-Which storage option will provide the HIGHEST performance for the cache? "	EC2 instance store
+EC2 instance store
+
+### Question 290
+
 "A company runs multiple workloads across an organization in AWS Organizations. The company's finance team needs detailed dashboards to track cost changes and provide detailed cost metrics. The finance team needs to track trends as granular as every hour.
+What should a SysOps administrator do to meet these requirements in the MOST operationally efficient way? "	
 
-What should a SysOps administrator do to meet these requirements in the MOST operationally efficient way? "	Generate an AWS Cost and Usage Report. Store the report in Amazon S3. Use Amazon Athena to query the data. Use Amazon QuickSight to develop dashbosrds based on the data in the AWS Cost and Usage Report. 
+Generate an AWS Cost and Usage Report. Store the report in Amazon S3. Use Amazon Athena to query the data. Use Amazon QuickSight to develop dashbosrds based on the data in the AWS Cost and Usage Report. 
+
+### Question 291
+
 "A company has a core application that must run 24 hours a day, 7 days a week. The application uses Amazon EC2. AWS Fargate, and AWS Lambda. The company uses a combination of operating systems across different AWS Regions.
-
 The company needs to maximize cost savings while committing to a pricing model that offers flexibility to make changes.
+What should the company do to meet these requirements? "	
 
-What should the company do to meet these requirements? "	Purchase a Compute Savings Plan that is based on Savings Plans recommendations
+Purchase a Compute Savings Plan that is based on Savings Plans recommendations
+
+### Question 292
+
 "A company’s architecture team must receive immediate email notification whenever new Amazon EC2 instances are launched in the company's main AWS production account.
+What should a SysOps administrator do to meet this requirement? "	
 
-‘What should a SysOps administrator do to meet this requirement? "	"	Create an Amazon Simple Notification Service (Amazon SNS) topic and a subscription that uses the email protocol. Enter the architecture team's email address as the subscriber. Create an Amazon EventBridge rule that reacts when EC2 instances are launched. Specify the SNS topic as the rule's target."
+Create an Amazon Simple Notification Service (Amazon SNS) topic and a subscription that uses the email protocol. Enter the architecture team's email address as the subscriber. Create an Amazon EventBridge rule that reacts when EC2 instances are launched. Specify the SNS topic as the rule's target.
+
+### Question 293
+
 "A SysOps administrator needs to update an AWS account name.
+What should the SysOps administrator do to accomplish this goal? "	
 
-What should the SysOps administrator do to accomplish this goal? "	"	Sign in as the AWS account root user to make the change."
+Sign in as the AWS account root user to make the change.
+
+### Question 294
+
 "A team of developers is using several Amazon S3 buckets as centralized repositories. Users across the world upload large sets of files to these repositories. The development team's applications later process these files.
-
 A SysOps administrator sets up a new S3 bucket, DOC-EXAMPLE-BUCKET, to support a new workload, The rew S3 bucket also receives regular uploads cf large sets of files from users worldwide. When the new S3 bucket is put into production, the upload performance from certain geographic areas is lower than the upload performance that the existing $3 buckets provide
-
 What should the SysOps administrator do to remediate this issue? "	
 
-"	Enable S3 Transfer Acceleration for the new S3 bucket. Verify that the developers are using the DOC-EXAMPLE-BUCKET.s3-accelerate.amazonaws.com endpoint name in their API calls"
+Enable S3 Transfer Acceleration for the new S3 bucket. Verify that the developers are using the DOC-EXAMPLE-BUCKET.s3-accelerate.amazonaws.com endpoint name in their API calls"
+
+### Question 295
 
 "A user has launched a Windows based EC2 instance. However, the instance has some issues and the user wants to check the log. When the user checks the
 Instance console output from the AWS console, what will it display?"	
