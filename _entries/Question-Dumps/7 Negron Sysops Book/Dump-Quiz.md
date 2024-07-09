@@ -17,7 +17,8 @@ number: 2900
     C. Implementing MFA
     D. Defining an access key ID
 
-1. C Implementing multifactor authentication (MFA)
+**Correct Answer**
+C Implementing multifactor authentication (MFA)
 injects an additional piece of information into the
 authentication process. MFA can be implemented using
 software or hardware tools and will add protection to
@@ -33,7 +34,7 @@ users if possible.
     C. Implementing MFA
     D. Defining an access key ID
 
-2. A, D Configuring programmatic access for the CLI will
+A, D Configuring programmatic access for the CLI will
 require four pieces of information: access key ID,
 secret access key, default region name, and default
 output format.
@@ -47,7 +48,7 @@ output format.
     E. Using Session Manager for EC2 instances
     F. Using service-linked roles
 
-3. A, C, D Defining an account-level password, enabling
+A, C, D Defining an account-level password, enabling
 MFA for all users, and enabling AWS Security Hub are
 fundamental to protecting your AWS account. Using
 CloudShell, Session Manager, and/or service-linked
@@ -61,7 +62,7 @@ not as fundamental.
     C. Implementing MFA for all users
     D. Using IAM roles
 
-4. D IAM roles are essential to provide cross-account
+D IAM roles are essential to provide cross-account
 access as well as enabling AWS services to interact
 with each other. Learn and understand roles and the
 mechanics of role policy creation to maintain a strong
@@ -74,7 +75,7 @@ security posture.
     C. Session Manager
     D. IAM groups
 
-5. B AWS CloudShell provides a mechanism for operators
+B AWS CloudShell provides a mechanism for operators
 to use the AWS CLI without having to provision access
 keys in a local machine. This adds a new layer of
 security as it saves time and effort in executing one-line
@@ -89,7 +90,7 @@ and simple administrative CLI commands.
     C. Session Manager
     D. IAM groups
 
-6. C Systems Manager Session Manager provides you
+C Systems Manager Session Manager provides you
 with a way to connect to Amazon EC2 instances that
 does not require the configuration of SSH or RDP
 resources to operate a particular instance. This is a
@@ -104,7 +105,7 @@ instances.
     D. https://signin.aws.amazon.com/signin/console
     E. https://account_alias.signin.aws.amazon.com/console
 
-7. B, E For console access, IAM users need to use the URL
+B, E For console access, IAM users need to use the URL
 as follows: https://accountID.signin.aws.amazon.com/console
 or https://account_alias.signin.aws.amazon.com/console.
 
@@ -116,7 +117,7 @@ or https://account_alias.signin.aws.amazon.com/console.
     C. Outpost
     D. Wavelength zone
 
-8. D Wavelength zones bring AWS services to the edge of
+D Wavelength zones bring AWS services to the edge of
 a 5G network, reducing the latency to connect to your
 application from a mobile device. Application traffic can
 reach application servers running in wavelength zones
@@ -132,7 +133,7 @@ be needed without such a resource.
     C. Outpost
     D. Wavelength zone
 
-9. B A local zone is an extension of a region where you
+B A local zone is an extension of a region where you
 can run low-latency applications using AWS services in
 proximity to end users. Local zones deliver single-digit
 millisecond latencies to users for use cases like media,
@@ -145,7 +146,7 @@ entertainment, and real-time gaming, among others.
     C. Outpost
     D. Wavelength zone
 
-10. C Outpost is designed to support applications that need
+C Outpost is designed to support applications that need
 to remain in your datacenter due to low-latency
 requirements or local data processing needs. It brings
 AWS services, infrastructure, and operating models to
@@ -158,7 +159,7 @@ your datacenter, co-location space, or physical facility.
     C. Edge location
     D. Wavelength zone
 
-11. C Edge locations are the resource used by AWS to
+C Edge locations are the resource used by AWS to
 deliver reliable and low-latency performance globally.
 Edge locations are how AWS attains high performance
 in countries and territories where a region does not
@@ -177,7 +178,7 @@ network consists of over 400 edge locations.
     C. Edge location
     D. Availability zone
 
-12. D An availability zone is a logical group of datacenters.
+D An availability zone is a logical group of datacenters.
 These groups are isolated and physically separate.
 Each of them includes independent power, cooling,
 physical security, and interconnectivity using high
@@ -194,7 +195,7 @@ zones but within 60 miles of each other.
     C. aws configure import –csv file://path/to/creds.csv
     D. aws configure
 
-13. A The AWS CLIv2 wizards feature is an improved
+A The AWS CLIv2 wizards feature is an improved
 version of the –cli-auto-prompt command-line option.
 Wizards guide you through the process of managing
 AWS resources. You can access the wizards feature by
@@ -210,7 +211,7 @@ aws <service-name> wizard <wizard-name>
     E. Amazon RDS
     F. Amazon S3
 
-14. B, C, D Wizards will query existing resources and
+B, C, D Wizards will query existing resources and
 prompt you for data in the process of setting up for the
 service invoked. As of this writing, wizards are
 available for configure, dynamodb, iam, and lambda
@@ -227,7 +228,7 @@ name. It's invoked as aws configure wizard.
     C. aws s3 ls
     D. aws s3 mb s3://my-bucket
 
-15. D The CLI command to create an Amazon S3 bucket is:
+D The CLI command to create an Amazon S3 bucket is:
 aws s3 mb s3://my-bucket
 You can type aws s3 help for details.
 
@@ -238,7 +239,7 @@ You can type aws s3 help for details.
     C. aws s3 sync my-directory s3://my-bucket/
     D. aws s3 mb s3://my-
 
-16. C The CLI command to copy the contents of a directory
+C The CLI command to copy the contents of a directory
 to an Amazon S3 bucket is:
 aws s3 sync my-directory s3://my-bucket/
 You can type aws s3 help for details.
@@ -252,7 +253,7 @@ You can type aws s3 help for details.
     D. --dry-run
     E. --cli-auto-prompt
 
-17. A, B The --query option can be used to limit the results
+A, B The --query option can be used to limit the results
 displayed from a CLI command. The query is expected
 to be structured according to the JMESPath
 specification, which defines the syntax for searching a
@@ -274,7 +275,7 @@ option does not make the request.
     D. Enterprise
     E. AWS IQ
 
-18. C, D The AWS Health API is available directly as part of
+C, D The AWS Health API is available directly as part of
 an AWS Business Support or AWS Enterprise Support
 plan. It allows for chat integration and ingesting events
 into Slack, Microsoft Teams, and Amazon Chime. It also
@@ -288,7 +289,7 @@ DataDog and Splunk, among many others.
     C. 5,000
     D. 500
 
-19. B The AWS default quota value for EC2-VPC Elastic IPs
+B The AWS default quota value for EC2-VPC Elastic IPs
 is 5 and will need an adjustment if you need more IPs.
 You can use the Service Quotas page on your
 management console to make a request to support and
@@ -302,7 +303,7 @@ have the limit increased if needed.
     D. https://calculator.aws
     E. https://tco.aws.amazon.com
 
-20. B, C, D For details about service pricing and usage
+B, C, D For details about service pricing and usage
 limits included in the AWS free tier, you can visit
 https://aws.amazon.com/free.The logic for AWS TCO calculator now resides in the
 Migration Evaluator at https://aws.amazon.com/migrationevaluator.
